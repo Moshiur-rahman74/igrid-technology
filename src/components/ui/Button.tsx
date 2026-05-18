@@ -21,12 +21,12 @@ export default function Button({
   type = 'button',
   disabled = false,
 }: ButtonProps) {
-  const baseStyles = 'font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00d4ff] transform hover:-translate-y-0.5';
+  const baseStyles = 'font-semibold rounded-xl transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00D4FF] transform hover:-translate-y-0.5';
   
   const variantStyles = {
-    primary: 'bg-gradient-to-r from-[#00d4ff] to-[#00b8e6] text-[#0a192f] hover:shadow-lg hover:shadow-[#00d4ff]/20',
-    secondary: 'bg-[#1e3a5f] text-white hover:bg-[#2a4a7a] hover:shadow-lg',
-    outline: 'border-2 border-[#00d4ff] text-[#00d4ff] hover:bg-[#00d4ff] hover:text-[#0a192f] hover:shadow-lg hover:shadow-[#00d4ff]/20',
+    primary: 'bg-[#00D4FF] text-[#0A192F] hover:bg-[#00B8E6] hover:shadow-lg hover:shadow-[#00D4FF]/20',
+    secondary: 'bg-[#0A192F] text-white hover:bg-[#123A5A] hover:shadow-lg',
+    outline: 'border-2 border-[#00D4FF] text-[#00D4FF] hover:bg-[#EAF8FC] hover:shadow-lg',
   };
   
   const sizeStyles = {

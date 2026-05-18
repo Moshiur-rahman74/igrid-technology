@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #FFFDF7;
+  --background-alt: #FAF7EF;
+  --background-warm: #F8F3EA;
   --foreground: #0a192f;
   --navy: #0a192f;
   --navy-light: #1e3a5f;
   --navy-lighter: #2a4a7a;
-  --electric-blue: #00d4ff;
-  --electric-blue-dark: #00b8e6;
-  --electric-blue-light: #00e5ff;
+  --electric-blue: #00a8cc;
+  --electric-blue-dark: #0088a8;
+  --electric-blue-light: #00c8e8;
+  --warm-amber: #d4a574;
+  --warm-amber-light: #e8c9a8;
+  --warm-amber-dark: #b88a5a;
   --light-gray: #f3f4f6;
   --gray-100: #f7f8fa;
   --gray-200: #e5e7eb;
@@ -120,7 +125,7 @@ button, a {
   }
   
   .bg-gradient-to-r {
-    background: #0a192f !important;
+    background: #0A192F !important;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

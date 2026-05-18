@@ -7,8 +7,8 @@ interface SectionProps {
 
 export default function Section({ children, className = '', id, background = 'white' }: SectionProps) {
   const backgroundStyles = {
-    white: 'bg-white',
-    light: 'bg-gray-50',
+    white: 'bg-[#FFFDF7]',
+    light: 'bg-[#F8F3EA]',
     dark: 'bg-[#0a192f]',
   };
 

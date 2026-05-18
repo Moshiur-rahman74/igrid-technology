@@ -11,7 +11,7 @@ export default function CostBreakdown({ products }: CostBreakdownProps) {
 
   if (products.length === 0) {
     return (
-      <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-2xl p-8 shadow-premium">
+      <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 shadow-premium">
         <p className="text-gray-500 text-center font-medium">Select products to see cost breakdown</p>
       </div>
     );
@@ -56,7 +56,7 @@ export default function CostBreakdown({ products }: CostBreakdownProps) {
       {/* Cost Table */}
       <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-premium">
         <table className="w-full">
-          <thead className="bg-gradient-to-r from-gray-50 to-gray-100">
+          <thead className="bg-gray-50">
             <tr>
               <th className="text-left px-6 py-4 text-sm font-bold text-[#0a192f]">Cost Component</th>
               <th className="text-right px-6 py-4 text-sm font-bold text-[#0a192f]">Amount</th>
@@ -107,7 +107,7 @@ export default function CostBreakdown({ products }: CostBreakdownProps) {
               <td className="px-6 py-4 text-sm text-right text-gray-600">{percentages.maintenance}%</td>
             </tr>
           </tbody>
-          <tfoot className="bg-gradient-to-r from-[#0a192f] to-[#1e3a5f]">
+          <tfoot className="bg-[#0A192F]">
             <tr>
               <td className="px-6 py-5 text-sm font-bold text-white">Total Project Cost</td>
               <td className="px-6 py-5 text-sm text-right font-bold text-[#00d4ff] text-2xl">
@@ -120,14 +120,14 @@ export default function CostBreakdown({ products }: CostBreakdownProps) {
       </div>
 
       {/* Final Estimated Cost Section */}
-      <div className="bg-gradient-to-r from-[#0a192f] to-[#1e3a5f] border-2 border-[#1e3a5f] rounded-2xl p-8 shadow-premium-lg">
+      <div className="bg-[#0A192F] border-2 border-[#123A5A] rounded-2xl p-8 shadow-premium-lg">
         <div className="flex justify-between items-center mb-6">
           <div>
             <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">Final Estimated Project Cost</h3>
             <p className="text-sm text-gray-300">Based on {costSummary.productCount} selected products</p>
           </div>
           <div className="text-right">
-            <p className="text-4xl font-bold text-[#00d4ff]">
+            <p className="text-4xl font-bold text-[#00D4FF]">
               {formatCurrency(costSummary.breakdown.totalProjectCost)}
             </p>
             <p className="text-xs text-gray-400 mt-1">Avg: {formatCurrency(costSummary.averageProductCost)}/product</p>

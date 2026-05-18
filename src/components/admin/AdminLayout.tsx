@@ -54,7 +54,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen" style={{ background: 'var(--background-warm)' }}>
       {/* Mobile sidebar backdrop */}
       {sidebarOpen && (
         <div
@@ -119,7 +119,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       {/* Main content */}
       <div className="lg:pl-64">
         {/* Top bar */}
-        <div className="flex items-center justify-between h-16 px-4 bg-white border-b border-gray-200">
+        <div className="flex items-center justify-between h-16 px-4" style={{ background: 'var(--background)', borderBottom: '1px solid var(--gray-200)' }}>
           <button
             onClick={() => setSidebarOpen(true)}
             className="lg:hidden text-gray-600 hover:text-gray-900"
@@ -133,7 +133,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </div>
 
         {/* Page content */}
-        <main className="p-6">{children}</main>
+        <main className="p-6" style={{ background: 'var(--background-alt)' }}>{children}</main>
       </div>
     </div>
   );

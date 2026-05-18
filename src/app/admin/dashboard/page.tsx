@@ -98,7 +98,8 @@ export default async function DashboardPage() {
             return (
               <div
                 key={card.title}
-                className="bg-white rounded-2xl shadow-premium border border-gray-200 p-6 hover:shadow-premium-lg transition-all hover-lift"
+                className="rounded-2xl shadow-premium border border-gray-200 p-6 hover:shadow-premium-lg transition-all hover-lift"
+                style={{ background: 'var(--background)' }}
               >
                 <div className="flex items-center justify-between">
                   <div>
@@ -118,7 +119,7 @@ export default async function DashboardPage() {
         {/* Recent Activity */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Recent Quotation Requests */}
-          <div className="bg-white rounded-2xl shadow-premium border border-gray-200">
+          <div className="rounded-2xl shadow-premium border border-gray-200" style={{ background: 'var(--background)' }}>
             <div className="p-6 border-b border-gray-200">
               <h2 className="text-xl font-bold text-[#0a192f] tracking-tight">
                 Recent Quotation Requests
@@ -164,7 +165,7 @@ export default async function DashboardPage() {
           </div>
 
           {/* Popular Categories - Placeholder */}
-          <div className="bg-white rounded-2xl shadow-premium border border-gray-200">
+          <div className="rounded-2xl shadow-premium border border-gray-200" style={{ background: 'var(--background)' }}>
             <div className="p-6 border-b border-gray-200">
               <h2 className="text-xl font-bold text-[#0a192f] tracking-tight flex items-center">
                 <TrendingUp className="w-6 h-6 mr-3 text-[#00d4ff]" />
@@ -180,7 +181,7 @@ export default async function DashboardPage() {
                       <div className="flex items-center">
                         <div className="w-32 bg-gray-200 rounded-full h-2.5 mr-3">
                           <div
-                            className="bg-gradient-to-r from-[#00d4ff] to-[#00b8e6] h-2.5 rounded-full"
+                            className="bg-[#00D4FF] h-2.5 rounded-full"
                             style={{ width: `${80 - index * 15}%` }}
                           />
                         </div>
@@ -198,7 +199,7 @@ export default async function DashboardPage() {
         </div>
 
         {/* Common Compatibility Warnings - Placeholder */}
-        <div className="bg-white rounded-2xl shadow-premium border border-gray-200">
+        <div className="rounded-2xl shadow-premium border border-gray-200" style={{ background: 'var(--background)' }}>
           <div className="p-6 border-b border-gray-200">
             <h2 className="text-xl font-bold text-[#0a192f] tracking-tight flex items-center">
               <AlertTriangle className="w-6 h-6 mr-3 text-[#f59e0b]" />

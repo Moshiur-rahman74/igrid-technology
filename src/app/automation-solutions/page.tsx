@@ -8,10 +8,10 @@ export default function AutomationSolutionsPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 pt-20">
-        <Section background="dark">
+        <Section background="light">
           <div className="text-center py-20">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">Automation Solutions</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-5xl md:text-6xl font-bold text-[#0a192f] mb-6 tracking-tight">Automation Solutions</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Comprehensive automation solutions tailored to your specific industrial needs with precision engineering.
             </p>
           </div>

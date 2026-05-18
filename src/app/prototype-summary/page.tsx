@@ -76,7 +76,7 @@ export default function PrototypeSummaryPage() {
                 </p>
                 <button
                   onClick={() => router.push('/hardware-configurator')}
-                  className="px-8 py-4 bg-gradient-to-r from-[#00d4ff] to-[#00b8e6] text-[#0a192f] font-bold rounded-xl hover:shadow-lg hover:shadow-[#00d4ff]/20 transition-all transform hover:-translate-y-0.5"
+                  className="px-8 py-4 bg-[#00D4FF] text-[#0A192F] font-bold rounded-xl hover:bg-[#00B8E6] hover:shadow-lg hover:shadow-[#00D4FF]/20 transition-all transform hover:-translate-y-0.5"
                 >
                   Go to Hardware Configurator
                 </button>

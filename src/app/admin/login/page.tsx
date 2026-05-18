@@ -63,8 +63,8 @@ export default function AdminLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0a192f] to-[#112240] flex items-center justify-center p-4">
-      <div className="bg-white rounded-lg shadow-2xl p-8 w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, var(--background-warm) 0%, var(--background-alt) 100%)' }}>
+      <div className="rounded-lg shadow-2xl p-8 w-full max-w-md" style={{ background: 'var(--background)' }}>
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-[#0a192f] mb-2">Admin Login</h1>
           <p className="text-gray-600">IGrid Technology Dashboard</p>

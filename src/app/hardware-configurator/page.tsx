@@ -240,8 +240,8 @@ export default function HardwareConfiguratorPage() {
                 onClick={() => setState({ ...state, industry, currentStep: 'machine' })}
                 className={`p-8 border-2 rounded-xl text-left transition-all duration-300 hover-lift ${
                   state.industry === industry
-                    ? 'border-[#00d4ff] bg-gradient-to-br from-[#00d4ff]/10 to-[#00d4ff]/5 shadow-lg shadow-[#00d4ff]/20'
-                    : 'border-gray-200 hover:border-[#00d4ff] hover:shadow-premium'
+                    ? 'border-[#00D4FF] bg-[#EAF8FC] shadow-lg'
+                    : 'border-gray-200 hover:border-[#00D4FF] hover:shadow-premium'
                 }`}
               >
                 <h3 className="font-bold text-[#0a192f] mb-3 text-lg tracking-tight">{industry}</h3>
@@ -260,8 +260,8 @@ export default function HardwareConfiguratorPage() {
                 onClick={() => setState({ ...state, machine, currentStep: 'automation' })}
                 className={`p-8 border-2 rounded-xl text-left transition-all duration-300 hover-lift ${
                   state.machine === machine
-                    ? 'border-[#00d4ff] bg-gradient-to-br from-[#00d4ff]/10 to-[#00d4ff]/5 shadow-lg shadow-[#00d4ff]/20'
-                    : 'border-gray-200 hover:border-[#00d4ff] hover:shadow-premium'
+                    ? 'border-[#00D4FF] bg-[#EAF8FC] shadow-lg'
+                    : 'border-gray-200 hover:border-[#00D4FF] hover:shadow-premium'
                 }`}
               >
                 <h3 className="font-bold text-[#0a192f] mb-3 text-lg tracking-tight">{machine}</h3>
@@ -280,8 +280,8 @@ export default function HardwareConfiguratorPage() {
                 onClick={() => setState({ ...state, automationLevel: level, currentStep: 'budget' })}
                 className={`p-8 border-2 rounded-xl text-left transition-all duration-300 hover-lift ${
                   state.automationLevel === level
-                    ? 'border-[#00d4ff] bg-gradient-to-br from-[#00d4ff]/10 to-[#00d4ff]/5 shadow-lg shadow-[#00d4ff]/20'
-                    : 'border-gray-200 hover:border-[#00d4ff] hover:shadow-premium'
+                    ? 'border-[#00D4FF] bg-[#EAF8FC] shadow-lg'
+                    : 'border-gray-200 hover:border-[#00D4FF] hover:shadow-premium'
                 }`}
               >
                 <h3 className="font-bold text-[#0a192f] mb-3 text-lg tracking-tight">{level}</h3>
@@ -308,8 +308,8 @@ export default function HardwareConfiguratorPage() {
                 }}
                 className={`p-8 border-2 rounded-xl text-left transition-all duration-300 hover-lift ${
                   state.budgetRange === budget
-                    ? 'border-[#00d4ff] bg-gradient-to-br from-[#00d4ff]/10 to-[#00d4ff]/5 shadow-lg shadow-[#00d4ff]/20'
-                    : 'border-gray-200 hover:border-[#00d4ff] hover:shadow-premium'
+                    ? 'border-[#00D4FF] bg-[#EAF8FC] shadow-lg'
+                    : 'border-gray-200 hover:border-[#00D4FF] hover:shadow-premium'
                 }`}
               >
                 <h3 className="font-bold text-[#0a192f] mb-3 text-lg tracking-tight">{budget}</h3>
@@ -372,33 +372,33 @@ export default function HardwareConfiguratorPage() {
         const reviewCompatibility = checkCompatibility(state.selectedProducts);
         return (
           <div className="space-y-8">
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200 shadow-premium">
+            <div className="bg-gradient-to-br from-[#FFF8F0] to-[#FFFBF5] p-8 rounded-2xl border border-[#E8DCC8] shadow-premium">
               <h3 className="text-2xl font-bold text-[#0a192f] mb-6 tracking-tight">Configuration Summary</h3>
               <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white p-4 rounded-xl border border-gray-200">
+                <div className="bg-[#FFFBF5] p-4 rounded-xl border border-[#E8DCC8]">
                   <p className="text-sm text-gray-500 mb-1">Industry</p>
                   <p className="font-semibold text-[#0a192f]">{state.industry}</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl border border-gray-200">
+                <div className="bg-[#FFFBF5] p-4 rounded-xl border border-[#E8DCC8]">
                   <p className="text-sm text-gray-500 mb-1">Machine Type</p>
                   <p className="font-semibold text-[#0a192f]">{state.machine}</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl border border-gray-200">
+                <div className="bg-[#FFFBF5] p-4 rounded-xl border border-[#E8DCC8]">
                   <p className="text-sm text-gray-500 mb-1">Automation Level</p>
                   <p className="font-semibold text-[#0a192f]">{state.automationLevel}</p>
                 </div>
-                <div className="bg-white p-4 rounded-xl border border-gray-200">
+                <div className="bg-[#FFFBF5] p-4 rounded-xl border border-[#E8DCC8]">
                   <p className="text-sm text-gray-500 mb-1">Budget Range</p>
                   <p className="font-semibold text-[#0a192f]">{state.budgetRange}</p>
                 </div>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200 shadow-premium">
+            <div className="bg-gradient-to-br from-[#FFF8F0] to-[#FFFBF5] p-8 rounded-2xl border border-[#E8DCC8] shadow-premium">
               <h3 className="text-2xl font-bold text-[#0a192f] mb-6 tracking-tight">Selected Products ({state.selectedProducts.length})</h3>
               <div className="space-y-4">
                 {state.selectedProducts.map((product) => (
-                  <div key={product.id} className="flex justify-between items-center p-4 bg-white rounded-xl border border-gray-200 hover:shadow-premium transition-shadow">
+                  <div key={product.id} className="flex justify-between items-center p-4 bg-[#FFFBF5] rounded-xl border border-[#E8DCC8] hover:shadow-premium transition-shadow">
                     <div>
                       <p className="font-semibold text-[#0a192f]">{product.name}</p>
                       <p className="text-sm text-gray-500">{product.brand} - {product.model}</p>
@@ -417,7 +417,7 @@ export default function HardwareConfiguratorPage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-8 rounded-2xl border border-gray-200 shadow-premium">
+            <div className="bg-gradient-to-br from-[#FFF8F0] to-[#FFFBF5] p-8 rounded-2xl border border-[#E8DCC8] shadow-premium">
               <h3 className="text-2xl font-bold text-[#0a192f] mb-6 tracking-tight">Compatibility Check</h3>
               <div className={`p-6 rounded-xl border-2 mb-6 ${
                 reviewCompatibility.overallStatus === 'compatible' ? 'bg-[#d1fae5] border-[#10b981]' :
@@ -478,7 +478,7 @@ export default function HardwareConfiguratorPage() {
             <div className="flex gap-4">
               <button 
                 onClick={handleSavePrototype}
-                className="flex-1 bg-gradient-to-r from-[#00d4ff] to-[#00b8e6] text-[#0a192f] font-bold py-4 rounded-xl hover:shadow-lg hover:shadow-[#00d4ff]/20 transition-all transform hover:-translate-y-0.5"
+                className="flex-1 bg-[#00D4FF] text-[#0A192F] font-bold py-4 rounded-xl hover:bg-[#00B8E6] hover:shadow-lg hover:shadow-[#00D4FF]/20 transition-all transform hover:-translate-y-0.5"
               >
                 Save Prototype
               </button>
@@ -492,7 +492,7 @@ export default function HardwareConfiguratorPage() {
             
             <button 
               onClick={handleViewFullSummary}
-              className="w-full bg-gradient-to-r from-[#0a192f] to-[#1e3a5f] text-white font-bold py-4 rounded-xl hover:from-[#1e3a5f] hover:to-[#2a4a7a] hover:shadow-lg transition-all transform hover:-translate-y-0.5"
+              className="w-full bg-[#0A192F] text-white font-bold py-4 rounded-xl hover:bg-[#123A5A] hover:shadow-lg transition-all transform hover:-translate-y-0.5"
             >
               View Full Prototype Summary
             </button>
@@ -529,7 +529,7 @@ export default function HardwareConfiguratorPage() {
 
             <div className="flex gap-8">
               <div className="flex-1">
-                <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-premium">
+                <div className="bg-[#FFFBF5] border border-[#E8DCC8] rounded-2xl p-8 shadow-premium">
                   <h2 className="text-3xl font-bold text-[#0a192f] mb-8 tracking-tight">
                     {steps[currentStepIndex]?.label}
                   </h2>
@@ -549,7 +549,7 @@ export default function HardwareConfiguratorPage() {
                        state.currentStep !== 'recommendations' && (
                         <button
                           onClick={handleNext}
-                          className="px-6 py-3 bg-gradient-to-r from-[#00d4ff] to-[#00b8e6] text-[#0a192f] font-bold rounded-xl hover:shadow-lg hover:shadow-[#00d4ff]/20 transition-all transform hover:-translate-y-0.5"
+                          className="px-6 py-3 bg-[#00D4FF] text-[#0A192F] font-bold rounded-xl hover:bg-[#00B8E6] hover:shadow-lg hover:shadow-[#00D4FF]/20 transition-all transform hover:-translate-y-0.5"
                         >
                           Continue
                         </button>
@@ -578,7 +578,7 @@ export default function HardwareConfiguratorPage() {
 
       {showQuotationModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg max-h-[90vh] overflow-y-auto">
+          <div className="bg-[#FFFBF5] rounded-lg max-h-[90vh] overflow-y-auto">
             <RequestQuotation
               configuratorState={state}
               onClose={() => setShowQuotationModal(false)}

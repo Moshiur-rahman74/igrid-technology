@@ -39,7 +39,7 @@ export async function getProducts(): Promise<Product[]> {
       .select('*');
 
     if (error) {
-      console.error('Error fetching products from Supabase:', error);
+      console.warn('Supabase fetch error, using local product data:', error.message);
       return products;
     }
 
@@ -50,7 +50,7 @@ export async function getProducts(): Promise<Product[]> {
 
     return data.map(convertToProduct);
   } catch (error) {
-    console.error('Error fetching products:', error);
+    console.warn('Supabase network error, using local product data:', error instanceof Error ? error.message : 'Unknown error');
     return products;
   }
 }
@@ -68,7 +68,7 @@ export async function getProductById(id: string): Promise<Product | null> {
       .single();
 
     if (error) {
-      console.error('Error fetching product from Supabase:', error);
+      console.warn('Supabase fetch error for product, using local data:', error.message);
       return products.find(p => p.id === id) || null;
     }
 
@@ -78,7 +78,7 @@ export async function getProductById(id: string): Promise<Product | null> {
 
     return convertToProduct(data);
   } catch (error) {
-    console.error('Error fetching product:', error);
+    console.warn('Supabase network error for product, using local data:', error instanceof Error ? error.message : 'Unknown error');
     return products.find(p => p.id === id) || null;
   }
 }
@@ -100,7 +100,7 @@ export async function getBrands(): Promise<Brand[]> {
       .select('*');
 
     if (error) {
-      console.error('Error fetching brands from Supabase:', error);
+      console.warn('Supabase fetch error for brands, using local data:', error.message);
       const uniqueBrands = Array.from(new Set(products.map(p => p.brand)));
       return uniqueBrands.map((brand, index) => ({
         id: `brand-${index}`,
@@ -110,7 +110,7 @@ export async function getBrands(): Promise<Brand[]> {
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching brands:', error);
+    console.warn('Supabase network error for brands, using local data:', error instanceof Error ? error.message : 'Unknown error');
     const uniqueBrands = Array.from(new Set(products.map(p => p.brand)));
     return uniqueBrands.map((brand, index) => ({
       id: `brand-${index}`,
@@ -136,7 +136,7 @@ export async function getCategories(): Promise<Category[]> {
       .select('*');
 
     if (error) {
-      console.error('Error fetching categories from Supabase:', error);
+      console.warn('Supabase fetch error for categories, using local data:', error.message);
       const uniqueCategories = Array.from(new Set(products.map(p => p.category)));
       return uniqueCategories.map((category, index) => ({
         id: `category-${index}`,
@@ -146,7 +146,7 @@ export async function getCategories(): Promise<Category[]> {
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching categories:', error);
+    console.warn('Supabase network error for categories, using local data:', error instanceof Error ? error.message : 'Unknown error');
     const uniqueCategories = Array.from(new Set(products.map(p => p.category)));
     return uniqueCategories.map((category, index) => ({
       id: `category-${index}`,
@@ -167,13 +167,13 @@ export async function getCompatibilityRules(): Promise<CompatibilityRule[]> {
       .select('*');
 
     if (error) {
-      console.error('Error fetching compatibility rules from Supabase:', error);
+      console.warn('Supabase fetch error for compatibility rules:', error.message);
       return [];
     }
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching compatibility rules:', error);
+    console.warn('Supabase network error for compatibility rules:', error instanceof Error ? error.message : 'Unknown error');
     return [];
   }
 }
@@ -193,13 +193,13 @@ export async function createQuotationRequest(request: Omit<QuotationRequest, 'id
       .single();
 
     if (error) {
-      console.error('Error creating quotation request:', error);
+      console.warn('Supabase error creating quotation request:', error.message);
       return null;
     }
 
     return data;
   } catch (error) {
-    console.error('Error creating quotation request:', error);
+    console.warn('Supabase network error creating quotation request:', error instanceof Error ? error.message : 'Unknown error');
     return null;
   }
 }
@@ -215,13 +215,13 @@ export async function getQuotationRequests(): Promise<QuotationRequest[]> {
       .select('*');
 
     if (error) {
-      console.error('Error fetching quotation requests:', error);
+      console.warn('Supabase error fetching quotation requests:', error.message);
       return [];
     }
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching quotation requests:', error);
+    console.warn('Supabase network error fetching quotation requests:', error instanceof Error ? error.message : 'Unknown error');
     return [];
   }
 }
@@ -241,13 +241,13 @@ export async function createFeedback(feedback: Omit<Feedback, 'id' | 'created_at
       .single();
 
     if (error) {
-      console.error('Error creating feedback:', error);
+      console.warn('Supabase error creating feedback:', error.message);
       return null;
     }
 
     return data;
   } catch (error) {
-    console.error('Error creating feedback:', error);
+    console.warn('Supabase network error creating feedback:', error instanceof Error ? error.message : 'Unknown error');
     return null;
   }
 }
@@ -263,13 +263,13 @@ export async function getFeedback(): Promise<Feedback[]> {
       .select('*');
 
     if (error) {
-      console.error('Error fetching feedback:', error);
+      console.warn('Supabase error fetching feedback:', error.message);
       return [];
     }
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching feedback:', error);
+    console.warn('Supabase network error fetching feedback:', error instanceof Error ? error.message : 'Unknown error');
     return [];
   }
 }
@@ -292,13 +292,13 @@ export async function getBlogPosts(publishedOnly: boolean = true): Promise<BlogP
     const { data, error } = await query;
 
     if (error) {
-      console.error('Error fetching blog posts:', error);
+      console.warn('Supabase error fetching blog posts:', error.message);
       return [];
     }
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching blog posts:', error);
+    console.warn('Supabase network error fetching blog posts:', error instanceof Error ? error.message : 'Unknown error');
     return [];
   }
 }
@@ -316,13 +316,13 @@ export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> 
       .single();
 
     if (error) {
-      console.error('Error fetching blog post:', error);
+      console.warn('Supabase error fetching blog post:', error.message);
       return null;
     }
 
     return data;
   } catch (error) {
-    console.error('Error fetching blog post:', error);
+    console.warn('Supabase network error fetching blog post:', error instanceof Error ? error.message : 'Unknown error');
     return null;
   }
 }
@@ -345,13 +345,13 @@ export async function getCaseStudies(publishedOnly: boolean = true): Promise<Cas
     const { data, error } = await query;
 
     if (error) {
-      console.error('Error fetching case studies:', error);
+      console.warn('Supabase error fetching case studies:', error.message);
       return [];
     }
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching case studies:', error);
+    console.warn('Supabase network error fetching case studies:', error instanceof Error ? error.message : 'Unknown error');
     return [];
   }
 }
@@ -369,13 +369,13 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudy | null
       .single();
 
     if (error) {
-      console.error('Error fetching case study:', error);
+      console.warn('Supabase error fetching case study:', error.message);
       return null;
     }
 
     return data;
   } catch (error) {
-    console.error('Error fetching case study:', error);
+    console.warn('Supabase network error fetching case study:', error instanceof Error ? error.message : 'Unknown error');
     return null;
   }
 }
@@ -392,13 +392,13 @@ export async function getAdminUsers(): Promise<AdminUser[]> {
       .select('*');
 
     if (error) {
-      console.error('Error fetching admin users:', error);
+      console.warn('Supabase error fetching admin users:', error.message);
       return [];
     }
 
     return data || [];
   } catch (error) {
-    console.error('Error fetching admin users:', error);
+    console.warn('Supabase network error fetching admin users:', error instanceof Error ? error.message : 'Unknown error');
     return [];
   }
 }

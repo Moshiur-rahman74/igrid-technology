@@ -115,7 +115,7 @@ export default function EnhancedPrototypeSummary({
   return (
     <div className="bg-white rounded-lg shadow-lg max-w-6xl mx-auto">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#0a192f] to-[#1e3a5f] text-white p-8">
+      <div className="bg-[#0A192F] text-white p-8">
         <div className="flex justify-between items-start">
           <div>
             <h1 className="text-3xl font-bold mb-2">Automation Prototype Summary</h1>
@@ -124,7 +124,7 @@ export default function EnhancedPrototypeSummary({
           </div>
           <div className="text-right">
             <p className="text-sm text-gray-300 mb-1">Reference ID</p>
-            <p className="text-2xl font-bold text-[#00d4ff]">{referenceNumber}</p>
+            <p className="text-2xl font-bold text-[#00D4FF]">{referenceNumber}</p>
           </div>
         </div>
       </div>
@@ -259,9 +259,9 @@ export default function EnhancedPrototypeSummary({
                 <span className="font-semibold text-[#0a192f]">{formatCurrency(costSummary.breakdown.maintenanceEstimate)}</span>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-[#0a192f] to-[#1e3a5f] rounded-lg p-6 text-white flex flex-col justify-center">
+            <div className="bg-[#0A192F] rounded-lg p-6 text-white flex flex-col justify-center">
               <p className="text-gray-300 mb-2">Final Estimated Project Cost</p>
-              <p className="text-4xl font-bold text-[#00d4ff] mb-2">
+              <p className="text-4xl font-bold text-[#00D4FF] mb-2">
                 {formatCurrency(costSummary.breakdown.totalProjectCost)}
               </p>
               <p className="text-sm text-gray-400">
@@ -330,7 +330,7 @@ export default function EnhancedPrototypeSummary({
           <ul className="space-y-2">
             {engineeringRecommendations.map((rec, index) => (
               <li key={index} className="flex items-start gap-2">
-                <span className="text-[#00d4ff] mt-1">•</span>
+                <span className="text-[#00D4FF] mt-1">•</span>
                 <span className="text-gray-700">{rec}</span>
               </li>
             ))}

@@ -22,7 +22,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
         <Section background="dark">
           <div className="text-center py-20 md:py-28 lg:py-36">
             <div className="max-w-5xl mx-auto">
-              <div className="w-24 h-24 bg-gradient-to-br from-[#00d4ff] to-[#00b8e6] rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg shadow-[#00d4ff]/20">
+              <div className="w-24 h-24 bg-[#EAF8FC] rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-lg">
                 <span className="text-5xl">{service.icon}</span>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight tracking-tight">
@@ -105,7 +105,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
             <h2 className="text-3xl font-bold text-[#0a192f] mb-8 tracking-tight">Industries Served</h2>
             <div className="flex flex-wrap gap-3">
               {service.industriesServed.map((industry, index) => (
-                <span key={index} className="px-4 py-2 bg-gradient-to-r from-[#00d4ff] to-[#00b8e6] text-[#0a192f] rounded-full font-medium">
+                <span key={index} className="px-4 py-2 bg-[#EAF8FC] text-[#0a192f] rounded-full font-medium">
                   {industry}
                 </span>
               ))}
@@ -140,7 +140,7 @@ export default function ServiceDetailPage({ params }: { params: { slug: string }
               {service.processSteps.map((step, index) => (
                 <div key={index} className="flex gap-6">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-gradient-to-br from-[#00d4ff] to-[#00b8e6] rounded-xl flex items-center justify-center shadow-lg shadow-[#00d4ff]/20">
+                    <div className="w-12 h-12 bg-[#EAF8FC] rounded-xl flex items-center justify-center shadow-lg">
                       <span className="text-[#0a192f] font-bold text-lg">{step.step}</span>
                     </div>
                   </div>

@@ -120,10 +120,10 @@ export default async function BlogPage() {
     <div className="min-h-screen flex flex-col">
       <Header />
       <main className="flex-1 pt-20">
-        <Section background="dark">
+        <Section background="light">
           <div className="text-center py-20">
-            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">Blog & Knowledge Center</h1>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-5xl md:text-6xl font-bold text-[#0a192f] mb-6 tracking-tight">Blog & Knowledge Center</h1>
+            <p className="text-xl text-[#0a192f]/70 max-w-3xl mx-auto leading-relaxed">
               Insights, tutorials, and industry news on industrial automation, PLC programming, and cost-efficient automation solutions.
             </p>
           </div>
@@ -143,18 +143,18 @@ export default async function BlogPage() {
                   )}
                   <div className="p-6">
                     {post.author && (
-                      <div className="text-sm font-semibold text-[#00d4ff] mb-3">By {post.author}</div>
+                      <div className="text-sm font-semibold text-[#00a8cc] mb-3">By {post.author}</div>
                     )}
                     <h3 className="text-xl font-bold text-[#0a192f] mb-3 tracking-tight">{post.title}</h3>
                     {post.excerpt && (
-                      <p className="text-gray-600 mb-4 line-clamp-3 leading-relaxed">{post.excerpt}</p>
+                      <p className="text-[#0a192f]/70 mb-4 line-clamp-3 leading-relaxed">{post.excerpt}</p>
                     )}
                     {post.created_at && (
-                      <p className="text-sm text-gray-500 font-medium">
+                      <p className="text-sm text-[#0a192f]/50 font-medium">
                         {new Date(post.created_at).toLocaleDateString()}
                       </p>
                     )}
-                    <p className="text-sm font-bold text-[#00d4ff] mt-4 hover:underline">Read More →</p>
+                    <p className="text-sm font-bold text-[#00a8cc] mt-4 hover:underline">Read More →</p>
                   </div>
                 </Card>
               </Link>
