@@ -2,6 +2,9 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Section from '@/components/ui/Section';
 import Button from '@/components/ui/Button';
+import Card from '@/components/ui/Card';
+import { services } from '@/data/services';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -74,6 +77,51 @@ export default function Home() {
               <h3 className="text-2xl font-semibold text-[#0a192f] mb-3">Cost-Effective</h3>
               <p className="text-gray-600 leading-relaxed">Optimized solutions balancing performance and budget for maximum ROI.</p>
             </div>
+          </div>
+        </Section>
+
+        {/* Our Engineering Services Section */}
+        <Section background="light">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0a192f] mb-6 tracking-tight">Our Engineering Services</h2>
+            <p className="text-gray-600 max-w-3xl mx-auto text-lg leading-relaxed">
+              Comprehensive industrial engineering solutions from electrical infrastructure to advanced automation systems.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <Link key={service.id} href={`/services/${service.slug}`}>
+                <Card className="h-full hover:shadow-premium-lg transition-all duration-300 hover-lift cursor-pointer group">
+                  <div className="p-6">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#00d4ff] to-[#00b8e6] rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-[#00d4ff]/20 group-hover:scale-110 transition-transform duration-300">
+                      <span className="text-3xl">{service.icon}</span>
+                    </div>
+                    <h3 className="text-2xl font-semibold text-[#0a192f] mb-3 group-hover:text-[#00d4ff] transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-4 line-clamp-2">
+                      {service.shortDescription}
+                    </p>
+                    <div className="space-y-2 mb-4">
+                      {service.benefits.slice(0, 3).map((benefit, index) => (
+                        <div key={index} className="flex items-start space-x-2">
+                          <div className="w-1.5 h-1.5 bg-[#00d4ff] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-sm text-gray-600 line-clamp-1">{benefit}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <Button variant="outline" size="sm" className="w-full mt-4">
+                      Learn More
+                    </Button>
+                  </div>
+                </Card>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Button href="/services" variant="primary" size="lg" className="px-8 py-4 text-lg">
+              View All Services
+            </Button>
           </div>
         </Section>
 

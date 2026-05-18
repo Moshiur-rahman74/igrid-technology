@@ -44,6 +44,23 @@ export default function ContactPage() {
             <Card title="Request a Quote">
               <form className="space-y-4">
                 <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Service Required</label>
+                  <select className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00d4ff]">
+                    <option value="">Select a service</option>
+                    <option value="substation">Substation</option>
+                    <option value="fire-hydrant-systems">Fire Hydrant Systems</option>
+                    <option value="industrial-automation">Industrial Automation</option>
+                    <option value="scada">SCADA</option>
+                    <option value="lps">LPS / Lightning Protection System</option>
+                    <option value="electrical-db-panel">Electrical DB Panel</option>
+                    <option value="solar-system">Solar System</option>
+                    <option value="civil-infrastructure">Civil Infrastructure</option>
+                    <option value="generator">Generator</option>
+                    <option value="cooling-system">Cooling System</option>
+                    <option value="hardware-configurator">Hardware Configurator / Automation Prototype</option>
+                  </select>
+                </div>
+                <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                   <input type="text" className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#00d4ff]" />
                 </div>
