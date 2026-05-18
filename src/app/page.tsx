@@ -16,11 +16,11 @@ export default function Home() {
           <div className="text-center py-24 md:py-36 lg:py-48">
             <div className="max-w-5xl mx-auto">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight tracking-tight">
-                Customize Your{' '}
+                Let's Build Your{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00d4ff] to-[#00e5ff]">
-                  Industrial Automation
+                  Technology
                 </span>{' '}
-                System
+                Together
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
                 Build cost-efficient or premium factory automation prototypes using multi-brand industrial hardware with precision engineering.
